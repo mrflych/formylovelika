@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+body {
+    font-family: 'Pacifico', cursive;
+    background-color: #90A7DB;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('bg1.jpg');
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        background-image: url('bg2.jpg');
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #90A7DB;
+    transform: scale(1.05);
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #6390b6;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #6390b6;
+    transform: translateY(-3px);
+}
+
+#greeting {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #333;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#play-music, #pause-music {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #6390b6;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#play-music:hover, #pause-music:hover {
+    background-color: #6390b6;
+    transform: translateY(-3px);
+}
+
+/* Cute animations */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes heart-float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.decorations {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+    z-index: -1;
+}
+
+.decor1 {
+    top: 10%;
+    left: 20%;
+}
+
+.decor2 {
+    top: 30%;
+    right: 20%;
+}
+
+.decor3 {
+    bottom: 20%;
+    left: 40%;
+}
+
+.decor4 {
+    bottom: 10%;
+    right: 30%;
+}
+
+/* Heart animation */
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #FF69B4;
+    transform: rotate(-45deg);
+    animation: heart-float 4s infinite ease-in-out;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #FF69B4;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -15px;
+    left: 0;
+}
+
+.heart::after {
+    left: 15px;
+    top: 0;
+}
+
+.heart1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart2 {
+    top: 20%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.heart3 {
+    bottom: 15%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.heart4 {
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 3s;
+}
